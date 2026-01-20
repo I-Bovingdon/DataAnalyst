@@ -131,13 +131,15 @@ body {
     font-weight: 700;
     margin-bottom: 1rem;
     letter-spacing: 1px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .hero-content .subtitle {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin-bottom: 2rem;
-    font-weight: 300;
-    opacity: 0.9;
+    font-weight: 500;
+    opacity: 0.95;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.3);
 }
 
 .profile-photo {
@@ -150,6 +152,13 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 /* ==================== 
    BOTONES
    ==================== */
@@ -160,7 +169,7 @@ body {
     border-radius: 4px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 1.15rem;
     transition: var(--transition);
     border: 2px solid transparent;
     cursor: pointer;
@@ -182,11 +191,43 @@ body {
     color: var(--primary-color);
     border: 2px solid var(--primary-color);
     margin: 0 0.5rem;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .btn-secondary:hover {
     background-color: var(--light-bg);
     transform: translateY(-2px);
+}
+
+.btn-secondary i {
+    font-size: 1rem;
+}
+
+.btn-cv {
+    background-color: #A82E2E;
+    color: var(--white);
+    border: 2px solid #A82E2E;
+}
+
+.btn-cv:hover {
+    background-color: #8B2020;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(168, 46, 46, 0.3);
+}
+
+.btn-connect {
+    background-color: #1565C0;
+    color: var(--white);
+    border: 2px solid #1565C0;
+}
+
+.btn-connect:hover {
+    background-color: #0D47A1;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(21, 101, 192, 0.3);
 }
 
 /* ==================== 
@@ -266,6 +307,9 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: var(--transition);
     border-top: 4px solid var(--accent-color);
+    text-decoration: none;
+    color: inherit;
+    display: block;
 }
 
 .skill-card:hover {
@@ -282,6 +326,36 @@ body {
 .skill-card p {
     color: var(--light-text);
     font-size: 0.95rem;
+}
+
+.skill-card-projects {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.05) 0%, rgba(46, 204, 113, 0.05) 100%);
+    border-top: 4px solid var(--primary-color);
+}
+
+.skill-card-projects:hover {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(46, 204, 113, 0.1) 100%);
+}
+
+.projects-list {
+    list-style: none;
+    padding: 0;
+}
+
+.projects-list li {
+    color: var(--light-text);
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.projects-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
 }
 
 /* ==================== 
@@ -350,9 +424,29 @@ body {
    ==================== */
 
 .contact {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    background-image: url('image/End-banner.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
     color: var(--white);
     text-align: center;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.23);
+    z-index: 1;
+}
+
+.contact .container {
+    position: relative;
+    z-index: 2;
 }
 
 .contact h3 {
@@ -365,9 +459,10 @@ body {
 }
 
 .contact > .container > p {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     margin-bottom: 2rem;
-    opacity: 0.9;
+    opacity: 1;
+    font-weight: 600;
 }
 
 .contact-info {
@@ -382,7 +477,7 @@ body {
    ==================== */
 
 .footer {
-    background-color: var(--primary-color);
+    background-color: #1f5a7a;
     color: var(--white);
     text-align: center;
     padding: 2rem 0;
@@ -442,6 +537,16 @@ body {
 
     .timeline-item::before {
         left: -30px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+        max-width: 300px;
     }
 }
 
