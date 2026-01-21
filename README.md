@@ -1,2 +1,3 @@
-# 00_Website
-Código de la página personal
+# DataAnalyst personal website
+
+html and css coding structure
